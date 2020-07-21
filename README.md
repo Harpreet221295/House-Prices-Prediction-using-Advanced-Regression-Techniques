@@ -30,8 +30,13 @@ Blending Model
 After hyperparameter tuning, we find the best parameter set for each model and train the corresponding best verios of each model using entire training dataset.
 
 Let s1, s2, s3, s4, s5 corresponds to cross-validation error score of Ridge, Lasso, ElasticNet,XGBoost and LGBM.
-Let Total = 1/s1 + 1/s2 + 1/s3 + 1/s4 + 1/s5
-Let X_test denotes the test data
-Prediction from blend model is Blend(X_test) = (1/s1)/Total * Ridge(X_test) + (1/s2)/Total * Lasso(X_test) + (1/s3)/Total * ElasticNet(X_test) + (1/s4)/Total * XGBoost(X_test) + (1/s5)/Total * LGBM(X_test)
 
+Let Total = 1/s1 + 1/s2 + 1/s3 + 1/s4 + 1/s5
+
+Let X_test denotes the test data
+
+Prediction from blend model is Blend(X_test) = (1/s1)/Total * Ridge(X_test) + (1/s2)/Total * Lasso(X_test) + (1/s3)/Total * ElasticNet(X_test) + (1/s4)/Total * 
+XGBoost(X_test) + (1/s5)/Total * LGBM(X_test)
+
+Blend model is the weighted sum of the predictions of each model. Higher the  cross-validation rmse, lower will be the weight.
 
