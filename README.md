@@ -39,5 +39,6 @@ Prediction from blend model is Blend(X_test) = (1/s1)/Total * Ridge(X_test) + (1
 XGBoost(X_test) + (1/s5)/Total * LGBM(X_test)
 
 Blend model is the weighted sum of the predictions of each model. Higher the  cross-validation rmse, lower will be the weight. All weights sum to 1.
+For final predictions, inverse log1p transformation is applied to model output.
 
-Leaderboard rmse - 0.12367
+Leaderboard rmse : 0.12367
